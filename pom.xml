@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>htmltemp</groupId>
+    <artifactId>htmltemp</artifactId>
+    <version>1.0</version>
+    <packaging>war</packaging>
+
+
+    <!--PROFILES START -->
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/profiles/dev</directory>
+                    </resource>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+    </profiles>
+    <!--PROFILES END -->
+
+    <!-- Maven repository start -->
+    <repositories>
+        <repository>
+            <id>repo2.maven</id>
+            <name>repo2.maven/maven2</name>
+            <url>http://repo2.maven.org/maven2</url>
+        </repository>
+        <repository>
+            <id>mvn.repository</id>
+            <url>http://mvnrepository.com/</url>
+        </repository>
+        <repository>
+            <id>jboss.com</id>
+            <name>jboss.org/maven2</name>
+            <url>http://repository.jboss.org/maven2</url>
+        </repository>
+        <repository>
+            <id>ibiblio</id>
+            <url>http://mirrors.ibiblio.org/pub/mirrors/maven2/</url>
+        </repository>
+        <repository>
+            <id>jboss</id>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+    <!-- Maven repository end -->
+
+    <!-- Maven build start -->
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- Cleanup START-->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.2</version>
+            </plugin>
+            <!-- Cleanup END-->
+            <!-- Compiler START-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- Compiler END-->
+            <!-- Jar START-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+            <!-- Jar END-->
+            <!-- Assemble resources START-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <outputDirectory/>
+                </configuration>
+            </plugin>
+            <!-- Assemble resources END-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <warName>htmltemp</warName>
+                    <warSourceDirectory>
+                        src/main/webapp
+                    </warSourceDirectory>
+                    <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.26</version>
+                <configuration>
+                    <scanIntervalSeconds>5</scanIntervalSeconds>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8080</port>
+                        </connector>
+                    </connectors>
+                    <webDefaultXml>src/main/resources/webdefault.xml</webDefaultXml>
+                </configuration>
+            </plugin>
+
+            <!-- Jacoco START -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.7.5.201505241946</version>
+                <configuration>
+                    <!-- Sets the path to the file which contains the execution data. -->
+                    <dataFile>${sonar.jacoco.reportPath}</dataFile>
+                    <!-- Sets the output directory for the code coverage report. -->
+                    <outputDirectory>${sonar.jacoco.outReportPath}</outputDirectory>
+                </configuration>
+            </plugin>
+            <!-- Jacoco END -->
+        </plugins>
+    </build>
+    <!-- Maven build end -->
+</project>
