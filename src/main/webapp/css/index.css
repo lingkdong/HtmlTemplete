@@ -1,0 +1,35 @@
+body {
+    background: #fff;
+    font: 14px/24px Georgia, 'Times New Roman', Times, serif;
+}
+.main-div{
+    padding-top:20px;
+    width: 100%;
+}
+.main-li{
+    float: left;
+    list-style: none;
+    /*font-size: 16px;*/
+    padding: 5px;
+}
+.main-li-div{
+    width: 156px;
+    height: 135px;
+    border: 1px solid rgba(150,150,150,0.3137254901960784);
+    position: relative;
+}
+.main-li-div-a{
+    color:#000000;
+    font-weight: bold;
+}
+.main-li-div-img{
+    width:156px;
+    height:110px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    opacity:0.9;
+}
+.main-li-div-img:hover{
+    cursor:pointer;
+}

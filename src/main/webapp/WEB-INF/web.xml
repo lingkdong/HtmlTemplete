@@ -5,4 +5,63 @@
          http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
     <display-name>htmltemp</display-name>
+
+    <!-- Define the base name for a resource bundle for I18N -->
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>i18n/ApplicationResources</param-value>
+    </context-param>
+
+    <!-- Fallback locale if no bundles found for browser's preferred locale,
+     Force a single locale using param-name 'javax.servlet.jsp.jstl.fmt.locale'
+     -->
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.fallbackLocale</param-name>
+        <param-value>en</param-value>
+    </context-param>
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>htmltemp.root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.util.WebAppRootListener</listener-class>
+    </listener>
+
+    <!-- spring MVC dispatcher servlet start -->
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.action</url-pattern>
+    </servlet-mapping>
+    <!-- spring MVC dispatcher servlet end -->
+
+    <!--filter-->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>
