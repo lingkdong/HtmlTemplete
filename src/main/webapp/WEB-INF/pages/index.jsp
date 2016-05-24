@@ -17,7 +17,7 @@
                 <c:forEach items="${records}" var="record">
                     <li class="main-li">
                         <div class="main-li-div">
-                            <a class="main-li-div-a" href="${pageContext.request.contextPath}/${record.url}">${record.name}</a>
+                            <a class="main-li-div-a" target="_blank" href="${pageContext.request.contextPath}/${record.url}">${record.name}</a>
                             <img class="main-li-div-img" src="${pageContext.request.contextPath}/${record.icon}"
                                  data-url="${pageContext.request.contextPath}/${record.url}">
                         </div>
