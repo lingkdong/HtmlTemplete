@@ -18,6 +18,18 @@ $(function(){
         var url =$(this).attr("data-url");
         window.open(url,"_blank");
     });
+
+    window.onscroll = function () {
+        if (document.documentElement.scrollTop + document.body.scrollTop > 100) {
+            $('#go-top').fadeIn(1000);
+        }
+        else {
+            $('#go-top').fadeOut(1000);
+        }
+    }
+    $('#go-top').click(function(){
+        $('html,body').animate({scrollTop:0},1000);
+    })
 })
 
 function processData(allText) {

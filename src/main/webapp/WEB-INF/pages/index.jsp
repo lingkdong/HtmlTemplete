@@ -4,14 +4,23 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <html>
 <head>
-    <title>htmltemp</title>
+    <title>html Templetes</title>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/logo.png" />
     <script type="text/javascript"  src="${pageContext.request.contextPath}/js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript"  src="${pageContext.request.contextPath}/js/index.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css"/>
 </head>
 <body>
-    <div class="content">
+   <div class="welcome">
+        <div class="welcome-website">
+            web.htmltemp.com
+        </div>
+        <div class="welcome-slogan">
+            <h1 style="text-align: center;" class="font-slogan">Choose Your Beautiful Website Template</h1>
+        </div>
+    </div>
+    <div class="content" id='content'>
         <div class="main-div">
             <ul class="main-div-ul">
                 <c:if test="${not empty records}">
@@ -29,6 +38,6 @@
             </ul>
         </div>
     </div>
-
+    <div class="go-top" id='go-top' hidden="hidden">TOP</div>
 </body>
 </html>
