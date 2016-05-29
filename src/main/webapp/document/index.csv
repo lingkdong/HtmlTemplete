@@ -1,5 +1,86 @@
 name,url,icon
-Knight,Templetes/Knight/index.html,img/Knight.png
-AdminLTE,Templetes/AdminLTE/index.html,img/AdminLTE.png
-BuildUp,Templetes/BuildUp/index.html,img/BuildUp.png
-CreativeZone,Templetes/CreativeZone/index.html,img/CreativeZone.png
+Accord,Accord\templatemo_478_accord\index.html,img\Accord_s.png
+AdminLTE-master,AdminLTE-master\AdminLTE-master\index.html,img\AdminLTE-master_s.png
+App,App\templatemo_474_app_landing\index.html,img\App_s.png
+App-zone,App-zone\app-zone\html\index.html,img\App-zone_s.png
+Appbay,Appbay\appbay\index.html,img\Appbay_s.png
+Appzy,Appzy\bs-appzy\index.html,img\Appzy_s.png
+Basic,Basic\basic\index.html,img\Basic_s.png
+BisLite,BisLite\BisLite\index.html,img\BisLite_s.png
+Bootstrap-restaurant,Bootstrap-restaurant\bootstrap-restaurant\index.html,img\Bootstrap-restaurant_s.png
+Bootstrap-shop,Bootstrap-shop\bootstrap-shop\index.html,img\Bootstrap-shop_s.png
+Boxify,Boxify\Boxify\index.html,img\Boxify_s.png
+Bs-multipager,Bs-multipager\bs-multipager-template\index.html,img\Bs-multipager_s.png
+Build-up,Build-up\build-up\index.html,img\Build-up_s.png
+Burstfly,Burstfly\burstfly\index.html,img\Burstfly_s.png
+Butterfly,Butterfly\Butterfly\index.html,img\Butterfly_s.png
+Cafe,Cafe\cafe\index.html,img\Cafe_s.png
+Canvas,Canvas\Canvas\index.html,img\Canvas_s.png
+COLOI,COLOI\bs-coloi\index.html,img\COLOI_s.png
+Conquer,Conquer\templatemo_476_conquer\index.html,img\Conquer_s.png
+Creativezone,Creativezone\creativezone\index.html,img\Creativezone_s.png
+Dsgn,Dsgn\dsgn\index.html,img\Dsgn_s.png
+Elevate,Elevate\templatemo_481_elevate\index.html,img\Elevate_s.png
+Enlighten,Enlighten\Documentation\index.html,img\Enlighten_s.png
+Halcyon-days,Halcyon-days\HalcyonDaysTemplate\index.html,img\Halcyon-days_s.png
+HEERA,HEERA\heera\index.html,img\HEERA_s.png
+Holiday,Holiday\templatemo_475_holiday\index.html,img\Holiday_s.png
+HTML 37,HTML 37\TMPH00037\index.html,img\HTML 37_s.png
+HTML 42,HTML 42\TMPH00042\index.html,img\HTML 42_s.png
+Html-14,Html-14\TMPH00014\index.html,img\Html-14_s.png
+Html-21,Html-21\TMP00021\index.html,img\Html-21_s.png
+Html-22,Html-22\TMP00022\index.html,img\Html-22_s.png
+Html-28,Html-28\TMPH00028\index.html,img\Html-28_s.png
+Html-31,Html-31\TMPH00031\index.html,img\Html-31_s.png
+Html-34,Html-34\TMPH00034\index.html,img\Html-34_s.png
+Html-35,Html-35\TMPH00035\index.html,img\Html-35_s.png
+Html-36,Html-36\TMPH00036\index.html,img\Html-36_s.png
+Html5up-helios,Html5up-helios\index.html,img\Html5up-helios_s.png
+Html5up-prologue,Html5up-prologue\index.html,img\Html5up-prologue_s.png
+Html5up-spectral,Html5up-spectral\index.html,img\Html5up-spectral_s.png
+Infinity,Infinity/Documentation/start-page.html,img\Infinity_s.png
+IT Host,IT Host\it-host\index.html,img\IT Host_s.png
+Kasper,Kasper\kasper-html5\index.html,img\Kasper_s.png
+King-of-pasta,King-of-pasta\king-of-pasta\index.html,img\King-of-pasta_s.png
+Kite,Kite\kite\index.html,img\Kite_s.png
+Knight,Knight\Knight\index.html,img\Knight_s.png
+Landon,Landon\landon\theme\index.html,img\Landon_s.png
+Landy-v1.0,Landy-v1.0\Landy-v1.0-master\index.html,img\Landy-v1.0_s.png
+La_casa_by_pixelhint,La_casa_by_pixelhint\La Casa\index.html,img\La_casa_by_pixelhint_s.png
+Light,Light\light\index.html,img\Light_s.png
+Lucenta,Lucenta\bs-parallax-lucenta\index.html,img\Lucenta_s.png
+Lumia,Lumia\lumia\index.html,img\Lumia_s.png
+Modern-town,Modern-town\2077_modern_town\index.html,img\Modern-town_s.png
+Moderno,Moderno\moderno\index.html,img\Moderno_s.png
+Mpurpose,Mpurpose\mPurpose-master\index.html,img\Mpurpose_s.png
+Munter,Munter\munter\Theme\index.html,img\Munter_s.png
+November,November\templatemo_473_november\index.html,img\November_s.png
+Onepage,Onepage\HTML\index.html,img\Onepage_s.png
+Photo.folio,Photo.folio\photo.folio\index.html,img\Photo.folio_s.png
+POLMO,POLMO\polmo\index.html,img\POLMO_s.png
+Primex,Primex\primex\index.html,img\Primex_s.png
+Puzzle,Puzzle\templatemo_477_puzzle\index.html,img\Puzzle_s.png
+Sadaka 1.0,Sadaka 1.0\sadaka\HTML\index.html,img\Sadaka 1.0_s.png
+Scrolled,Scrolled\scrolled\index.html,img\Scrolled_s.png
+Sedna,Sedna\Sedna\index.html,img\Sedna_s.png
+Shield,Shield\shield\Shield Theme\index.html,img\Shield_s.png
+Sigma,Sigma\templatemo_479_sigma\index.html,img\Sigma_s.png
+Simpla,Simpla\bs-simpla\index.html,img\Simpla_s.png
+Spore,Spore\spore\index.html,img\Spore_s.png
+Spot,Spot\spot\theme\index.html,img\Spot_s.png
+Squadfree,Squadfree\Squadfree\index.html,img\Squadfree_s.png
+Srizon-Drifolio-Bootstrap-ea23d11,Srizon-Drifolio-Bootstrap-ea23d11\srizon-Drifolio-Bootstrap-ea23d11\index.html,img\Srizon-Drifolio-Bootstrap-ea23d11_s.png
+Stable,Stable\stable\index.html,img\Stable_s.png
+Studio,Studio\studio\Theme\index.html,img\Studio_s.png
+Sublime,Sublime\sublime\index.html,img\Sublime_s.png
+Substance,Substance\Substance - Pro Bootstrap Template\HTML\index.html,img\Substance_s.png
+Superfresh,Superfresh\superfresh\index.html,img\Superfresh_s.png
+Templatemo_395_urbanic,Templatemo_395_urbanic\templatemo_395_urbanic\index.html,img\Templatemo_395_urbanic_s.png
+The News Reporter,The News Reporter\the-news-reporter\index.html,img\The News Reporter_s.png
+The-story,The-story\templatemo_480_story\index.html,img\The-story_s.png
+Threesixty,Threesixty\ThreeSixty Bootstrap 3 Template Version 1\html\index.html,img\Threesixty_s.png
+Webkurn,Webkurn\webkurn\Flip_turn\index.html,img\Webkurn_s.png
+Wp Digital Download,Wp Digital Download\wp-digital-download\index.html,img\Wp Digital Download_s.png
+Yacht-club,Yacht-club\yacht-club\html\index.html,img\Yacht-club_s.png
+Yellow-blog,Yellow-blog\index.html,img\Yellow-blog_s.png
+Zentro,Zentro\2076_zentro\index.html,img\Zentro_s.png

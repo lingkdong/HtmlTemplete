@@ -41,7 +41,6 @@ public class IndexController {
                 DirectoyDto directoyDto=new DirectoyDto(name,url,icon);
                 records.add(directoyDto);
             }
-
             request.setAttribute("records",records);
         } catch (IOException e) {
             e.printStackTrace();

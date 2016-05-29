@@ -16,6 +16,30 @@ public class DirectoyDto {
     public DirectoyDto(){
 
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        DirectoyDto that = (DirectoyDto) o;
+
+        if (!icon.equals(that.icon)) return false;
+        if (!name.equals(that.name)) return false;
+        if (!url.equals(that.url)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + url.hashCode();
+        result = 31 * result + icon.hashCode();
+        return result;
+    }
+
     public DirectoyDto(String name,String url,String icon){
          this.name=name;
          this.url=url;

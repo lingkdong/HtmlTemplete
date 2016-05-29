@@ -11,21 +11,23 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css"/>
 </head>
 <body>
-    <div class="main-div">
-        <ul>
-            <c:if test="${not empty records}">
-                <c:forEach items="${records}" var="record">
-                    <li class="main-li">
-                        <div class="main-li-div">
-                            <a class="main-li-div-a" target="_blank" href="${pageContext.request.contextPath}/${record.url}">${record.name}</a>
-                            <img class="main-li-div-img" src="${pageContext.request.contextPath}/${record.icon}"
-                                 data-url="${pageContext.request.contextPath}/${record.url}">
-                        </div>
-                    </li>
-                </c:forEach>
-           </c:if>
+    <div class="content">
+        <div class="main-div">
+            <ul class="main-div-ul">
+                <c:if test="${not empty records}">
+                    <c:forEach items="${records}" var="record">
+                        <li class="main-li">
+                            <div class="main-li-div">
+                                <a title="${record.name}" class="main-li-div-a" target="_blank" href="${pageContext.request.contextPath}/Templetes/${record.url}">${record.name}</a>
+                                <img class="main-li-div-img" src="${pageContext.request.contextPath}/${record.icon}"
+                                     data-url="${pageContext.request.contextPath}/Templetes/${record.url}">
+                            </div>
+                        </li>
+                    </c:forEach>
+                </c:if>
 
-        </ul>
+            </ul>
+        </div>
     </div>
 
 </body>
