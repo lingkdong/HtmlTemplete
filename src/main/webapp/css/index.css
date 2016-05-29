@@ -20,6 +20,7 @@ body {
     -webkit-justify-content: space-around;
     -ms-flex-pack: distribute;
     justify-content: space-around;
+    text-align: center;
 }
 .main-div-ul{
     display: block;
@@ -111,7 +112,7 @@ body {
 .welcome-website{
     padding-top: 20px;
     float: left;
-    padding-left: 10%;
+    padding-left: 5%;
     color: #3CC7C5;
     font: normal normal normal 36px helveticaneuew01-thin,sans-serif;
 }

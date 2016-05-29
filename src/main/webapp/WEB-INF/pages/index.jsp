@@ -28,7 +28,7 @@
                         <li class="main-li">
                             <div class="main-li-div">
                                 <a title="${record.name}" class="main-li-div-a" target="_blank" href="${pageContext.request.contextPath}/Templetes/${record.url}">${record.name}</a>
-                                <img class="main-li-div-img" src="${pageContext.request.contextPath}/${record.icon}"
+                                <img class="main-li-div-img" onclick="imgClick(this)" src="${pageContext.request.contextPath}/${record.icon}"
                                      data-url="${pageContext.request.contextPath}/Templetes/${record.url}">
                             </div>
                         </li>

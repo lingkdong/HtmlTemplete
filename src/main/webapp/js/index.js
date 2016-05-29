@@ -14,10 +14,6 @@ $(function(){
             processData(data);
         }
     });
-    $(".main-li-div-img").bind("click",function(){
-        var url =$(this).attr("data-url");
-        window.open(url,"_blank");
-    });
 
     window.onscroll = function () {
         if (document.documentElement.scrollTop + document.body.scrollTop > 100) {
@@ -46,10 +42,15 @@ function processData(allText) {
            var li=$('<li class="main-li"></li>');
            var div=$('<div class="main-li-div"></div>');
            var a=$('<a title="'+name+'" class="main-li-div-a" target="_blank" href="../Templetes/'+url+'">'+name+'</a>');
-           var img=$(' <img class="main-li-div-img" src="../'+icon+'" data-url="../Templetes/'+url+'">')
+           var img=$(' <img class="main-li-div-img" onclick="imgClick(this)" src="../'+icon+'" data-url="../Templetes/'+url+'">')
            $('#list').append(li.append(div.append(a).append(img)));
         }else{
             console.log("data.length != headers.length  row number is "+i)
         }
     }
+}
+
+function imgClick(obj){
+    var url =$(obj).attr("data-url");
+    window.open(url,"_blank");
 }
