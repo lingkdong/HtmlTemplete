@@ -14,7 +14,7 @@
 <body>
    <div class="welcome">
         <div class="welcome-website">
-            web.htmltemp.com
+            www.htmltemp.com
         </div>
         <div class="welcome-slogan">
             <h1 style="text-align: center;" class="font-slogan">Choose Your Beautiful Website Template</h1>
