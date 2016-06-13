@@ -31,7 +31,8 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class FileDirectory {
-    private  final static  String directory="F:\\WEB\\HtmlTemplete\\src\\main\\webapp\\Templetes\\";
+//    private  final static  String directory="F:\\WEB\\HtmlTemplete\\src\\main\\webapp\\Templetes\\";
+    private  final static  String directory="F:\\Html_css_web_temp\\des\\";
     public static void main(String[] args) {
     }
 
@@ -70,8 +71,7 @@ public class FileDirectory {
 
     @Test
     public void reName(){
-        String path="F:\\HTML_temp3\\des";
-        File fileDirectory=new File(path);
+        File fileDirectory=new File(directory);
         File[]files=fileDirectory.listFiles();
         for(File file:files){
                if(file.isDirectory()){
@@ -163,7 +163,7 @@ public class FileDirectory {
     @Test
     public void snapShortTest(){
         try {
-             File file =new File("F:\\WEB\\HtmlTemplete\\src\\main\\webapp\\document\\index_20160526.csv");
+             File file =new File(directory+"directory.csv");
             Reader reader=new FileReader(file);
              Iterable<CSVRecord> csvRecords= CSVFormat.RFC4180.withFirstRecordAsHeader().parse(reader);
             for(CSVRecord csvRecord:csvRecords){
@@ -171,10 +171,10 @@ public class FileDirectory {
                 String url=csvRecord.get("url");
                 String icon=csvRecord.get("icon");
                 String htmlPathName="file:///"+directory+url;
-                String imgPathName="F:\\WEB\\HtmlTemplete\\src\\main\\webapp\\img\\"+name+".png";
+                String imgPathName="F:\\Html_css_web_temp\\img\\"+name+".png";
                 File f=new File(imgPathName);
                 if(!f.exists()) {
-                   if(!snapShort(htmlPathName,imgPathName)){
+                   if(!snapShort(htmlPathName,imgPathName,30*1000)){
                        continue;
                    }
                 }
@@ -187,14 +187,14 @@ public class FileDirectory {
         }
     }
 
-    public Boolean  snapShort(String url,String filePathName){
+    public Boolean  snapShort(String url,String filePathName,int time){
         try {
             // 此方法仅适用于JdK1.6及以上版本
             url=url.replaceAll(" ", "%20");
             Desktop.getDesktop().browse(
                     new URL(url).toURI());
             Robot robot = new Robot();
-            robot.delay(3*1000);
+            robot.delay(time);
             Dimension d = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
             int width = (int) d.getWidth();
             int height = (int) d.getHeight();
@@ -226,5 +226,33 @@ public class FileDirectory {
         String fileName="index.csv";
         String[] arr=fileName.split("\\.");
         System.out.println(arr.length);
+    }
+
+    @Test
+    public void isAllFileInCsv(){
+        //获取csv中文件记录
+        try {
+            Reader in=new FileReader(new File("F:\\WEB\\HtmlTemplete\\src\\main\\webapp\\document\\index.csv"));
+            Iterable<CSVRecord> csvRecords=CSVFormat.RFC4180.withFirstRecordAsHeader().parse(in);
+            Set<String> set=new HashSet<String>();
+            for(CSVRecord csvRecord:csvRecords){
+                String name=csvRecord.get("name");
+                 set.add(name.toLowerCase());
+            }
+            File fileDirectory=new File(directory);
+            File [] files=fileDirectory.listFiles();
+            for(File file:files){
+                if(file.isDirectory()){
+                    if(!set.contains(file.getName().toLowerCase())){
+                        System.out.println("need add .... "+file.getAbsolutePath());
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("finish.....");
+
     }
 }
