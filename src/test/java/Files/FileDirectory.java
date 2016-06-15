@@ -70,13 +70,13 @@ public class FileDirectory {
     }
 
     @Test
-    public void reName(){
+    public void reName(String replaceStr){
         File fileDirectory=new File(directory);
         File[]files=fileDirectory.listFiles();
         for(File file:files){
                if(file.isDirectory()){
                    String fileName=file.getName();
-                   String newName=fileName.replaceAll(" Free Website Template - Free-CSS.com","");
+                   String newName=fileName.replaceAll(replaceStr,"");
                    newName= upperCaseFirstChar(newName);
                    if(!fileName.equals(newName)){
                        File newfile=new File(file.getParent()+"/"+newName);
@@ -102,6 +102,7 @@ public class FileDirectory {
 
     @Test
     public void buildCsv(){
+        reName(" Free Website Template - Free-CSS.com");//重命名 将首字母大写
         Collection<File> files=listFiles(new File(directory),new String[]{"index.html"},true);
         File fileDirectoy=new File(directory);
         try {
