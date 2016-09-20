@@ -12,10 +12,7 @@ import java.util.Date;
 //import javax.servlet.http.HttpServletRequest;
 import javax.imageio.ImageIO;
 
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGEncodeParam;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
- 
+
 public class FileUtils {
 	/**
 	 * 压缩图片方法
@@ -57,13 +54,7 @@ public class FileUtils {
 				/*压缩后的文件名 */
 				newImage = temp[0]+smallIcon+"."+temp[1];
 				/*压缩之后临时存放位置*/
-				FileOutputStream out = new FileOutputStream(newImage);
-				JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
-				JPEGEncodeParam jep = JPEGCodec.getDefaultJPEGEncodeParam(tag);
-				/* 压缩质量 */
-				jep.setQuality(quality, true);
-				encoder.encode(tag, jep);
-				out.close();
+				ImageIO.write(tag,temp[1],new FileOutputStream(newImage));
 				return "success";
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
@@ -262,11 +253,9 @@ public class FileUtils {
                     BufferedImage.TYPE_INT_RGB);
 
             tag.getGraphics().drawImage(src.getScaledInstance(widthdist, heightdist,  Image.SCALE_SMOOTH), 0, 0,  null);
-
+            int i=imgsrc.lastIndexOf(".")+1;
             FileOutputStream out = new FileOutputStream(imgdist);
-            JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
-            encoder.encode(tag);
-            out.close();
+            ImageIO.write(tag,imgsrc.substring(i),out);
 
         } catch (IOException ex) {
             ex.printStackTrace();

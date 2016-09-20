@@ -1,10 +1,8 @@
 package Files;
 
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGEncodeParam;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
 import javax.imageio.ImageIO;
+import javax.imageio.stream.FileImageOutputStream;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -58,13 +56,7 @@ public class ImageCompression {
                 int index=oldFile.lastIndexOf(".");
                 newImage=oldFile.substring(0,index)+smallFlag+oldFile.substring(index);
 				/*压缩之后临时存放位置*/
-                FileOutputStream out = new FileOutputStream(newImage);
-                JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
-                JPEGEncodeParam jep = JPEGCodec.getDefaultJPEGEncodeParam(tag);
-				/* 压缩质量 */
-                jep.setQuality(quality, true);
-                encoder.encode(tag, jep);
-                out.close();
+                ImageIO.write(tag,oldFile.substring(index+1),new FileOutputStream(newImage));
             } catch (Exception e) {
                 e.printStackTrace();
                return false;

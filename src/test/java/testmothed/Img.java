@@ -5,7 +5,6 @@ import java.util.Date;
 import java.awt.*;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
-import com.sun.image.codec.jpeg.*;
 
 public class Img {
     private Image img;
@@ -81,11 +80,6 @@ public class Img {
         File destFile = new File(file.getParent()+File.separator+newFileName);
         FileOutputStream out = new FileOutputStream(destFile); // 输出到文件流
         // 可以正常实现bmp、png、gif转jpg
-        JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
-        JPEGEncodeParam param=JPEGCodec.getDefaultJPEGEncodeParam(image);
-        float quality=1;
-        param.setQuality(quality,true); //压缩质量
-        encoder.encode(image); // JPEG编码
-        out.close();
+       ImageIO.write(image,fileName.substring(index+1),out);
     }
 }

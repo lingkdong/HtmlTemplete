@@ -2,6 +2,8 @@ package com.htmltemp.webapp.dto;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import java.io.Serializable;
+
 /**
  * Created with IntelliJ IDEA.
  * User:lk
@@ -9,7 +11,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * Time: 上午11:28
  * To change this template use File | Settings | File Templates.
  */
-public class DirectoyDto {
+public class DirectoyDto  {
     private String name;
     private String url;
     private String icon;
