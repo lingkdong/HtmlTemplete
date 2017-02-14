@@ -13,7 +13,7 @@ import java.util.Date;
 import javax.imageio.ImageIO;
 
 
-public class FileUtils {
+public class MyFileUtils {
 	/**
 	 * 压缩图片方法
 	 * 
@@ -59,13 +59,13 @@ public class FileUtils {
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 				try {
-					FileUtils.logFile(e.toString());//写入错误日志
+					MyFileUtils.logFile(e.toString());//写入错误日志
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
 			} catch (IOException e) {
 				try {
-					FileUtils.logFile(e.toString());//写入错误日志
+					MyFileUtils.logFile(e.toString());//写入错误日志
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
@@ -112,14 +112,14 @@ public class FileUtils {
 		if(max<=0){
 			//原高宽压缩
 			fileUrl_m =
-				(FileUtils.doCompress(path,
+				(MyFileUtils.doCompress(path,
 				width,
 				height,
 						quality,temp, "_m", true));
 		}else{
 			//限制最大边压缩
 			fileUrl_m =
-				(FileUtils.doCompress(path,
+				(MyFileUtils.doCompress(path,
 				width>max&&width>height?max:width,
 				height>max&&height>=width?max:height,
 						quality,temp, "_m", true));
@@ -261,4 +261,59 @@ public class FileUtils {
             ex.printStackTrace();
         }
     }
+
+
+	public static String doCompress(String newPath,String oldFile, int width, int height, float quality,String[] temp,
+									String smallIcon, boolean percentage) {
+		if (oldFile != null && width > 0 && height > 0) {
+			Image srcFile=null;
+			String newImage = "";
+			try {
+				File file = new File(oldFile);
+				// 文件不存在
+				if (!file.exists()) {
+					return "";
+				}
+				/*读取图片信息*/
+				srcFile = ImageIO.read(file);
+				int new_w = width;
+				int new_h = height;
+				if (percentage) {
+//					// 为等比缩放计算输出的图片宽度及高度
+					double rate1 = ((double) srcFile.getWidth(null)) / (double) width + 0.1;
+					double rate2 = ((double) srcFile.getHeight(null)) / (double) height + 0.1;
+					double rate = rate1 > rate2 ? rate1 : rate2;
+					new_w = (int) (((double) srcFile.getWidth(null)) / rate);
+					new_h = (int) (((double) srcFile.getHeight(null)) / rate);
+				}
+				/* 宽高设定*/
+				BufferedImage tag = new BufferedImage(new_w, new_h, BufferedImage.TYPE_INT_RGB);
+				tag.getGraphics().drawImage(srcFile, 0, 0, new_w, new_h, null);
+				/*压缩后的文件名 */
+				newImage = newPath+temp[0]+smallIcon+"."+temp[1];
+				/*压缩之后临时存放位置*/
+				ImageIO.write(tag,temp[1],new FileOutputStream(newImage));
+				return newImage;
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+				try {
+					MyFileUtils.logFile(e.toString());//写入错误日志
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			} catch (IOException e) {
+				try {
+					MyFileUtils.logFile(e.toString());//写入错误日志
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				e.printStackTrace();
+			}finally{
+				srcFile.flush();
+			}
+			return "";
+		} else {
+			return "";
+		}
+	}
 }

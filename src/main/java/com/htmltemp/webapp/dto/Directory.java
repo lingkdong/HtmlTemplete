@@ -2,8 +2,6 @@ package com.htmltemp.webapp.dto;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import java.io.Serializable;
-
 /**
  * Created with IntelliJ IDEA.
  * User:lk
@@ -11,11 +9,11 @@ import java.io.Serializable;
  * Time: 上午11:28
  * To change this template use File | Settings | File Templates.
  */
-public class DirectoyDto  {
+public class Directory {
     private String name;
     private String url;
     private String icon;
-    public DirectoyDto(){
+    public Directory(){
 
     }
 
@@ -25,7 +23,7 @@ public class DirectoyDto  {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        DirectoyDto that = (DirectoyDto) o;
+        Directory that = (Directory) o;
 
         if (!icon.equals(that.icon)) return false;
         if (!name.equals(that.name)) return false;
@@ -42,7 +40,7 @@ public class DirectoyDto  {
         return result;
     }
 
-    public DirectoyDto(String name,String url,String icon){
+    public Directory(String name, String url, String icon){
          this.name=name;
          this.url=url;
          this.icon=icon;
@@ -75,4 +73,6 @@ public class DirectoyDto  {
     {
       return new ToStringBuilder(this).toString();
     }
+
+
 }

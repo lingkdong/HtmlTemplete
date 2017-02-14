@@ -1,9 +1,8 @@
 package Files;
 
 import com.google.common.collect.ImmutableSet;
-import com.htmltemp.webapp.dto.DirectoyDto;
+import com.htmltemp.webapp.dto.Directory;
 import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.FalseFileFilter;
@@ -12,7 +11,6 @@ import org.apache.commons.io.filefilter.SuffixFileFilter;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
-import testmothed.Img;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -136,11 +134,11 @@ public class FileDirectory {
     }
     @Test
     public void  SetTest(){
-        DirectoyDto directoryDto=new DirectoyDto("test","4","9");
-        DirectoyDto directoryDto2=new DirectoyDto("test2","4","9");
-        DirectoyDto directoryDto3=new DirectoyDto("test","4","9");
+        Directory directoryDto=new Directory("test","4","9");
+        Directory directoryDto2=new Directory("test2","4","9");
+        Directory directoryDto3=new Directory("test","4","9");
 
-        List<DirectoyDto> directoyDtos=new ArrayList<DirectoyDto>();
+        List<Directory> directoyDtos=new ArrayList<Directory>();
         directoyDtos.add(directoryDto);
         directoyDtos.add(directoryDto2);
         directoyDtos.add(directoryDto3);
